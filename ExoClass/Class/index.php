@@ -1,5 +1,7 @@
 <?php
 
+//https://github.com/smknstd/modern-php-cheatsheet class version php 8
+
 namespace TestClass;
 
 require_once 'Humain.php';
@@ -20,7 +22,7 @@ echo '<hr>';
 $Alex->setAge(18);
 echo $Alex;
 echo '<hr>';
-$Alex::setPlanet('Mars');
+Student::setPlanet('Mars');
 echo $Alex;
 echo '<hr>';
 echo $Tom->getName();

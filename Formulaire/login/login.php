@@ -1,4 +1,9 @@
 <?php
+
+/*
+for debug
+XDEBUG_SESSION_START=[name]
+*/
 //recuperation des infos du form
 $mail=$_POST['email'];
 $pwd=$_POST['pwd'];
