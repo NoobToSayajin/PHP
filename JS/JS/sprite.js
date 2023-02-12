@@ -4,14 +4,16 @@ class Sprite
      * 
      * @param {int} pX 
      * @param {int} pY 
-     * @param {Image} pImg
+     * @param {string} pImg
      * @returns {Sprite}
      */
-    constructor(pImg, pX, pY)
+    constructor(pImg, pX = 0, pY = 0)
     {
         this.x = pX;
         this.y = pY;
-        this.img = pImg;
+        this.img = new Image();
+        this.img.src = pImg;
+        this.img.onload = imgLoader;
         console.log("new Sprite");
     }
 
