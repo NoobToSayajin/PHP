@@ -4,28 +4,8 @@
     <meta charset="utf-8">
 
     <title>Number guessing game</title>
-
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
-      
-      .form input[type="number"] {
-        width: 200px;
-      }
-
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
@@ -44,59 +24,5 @@
       <p class="lastResult"></p>
       <p class="lowOrHi"></p>
     </div>
-
-    <script>
-      let rndNum = Math.floor(Math.random()*100);
-      
-      let guesses = document.querySelector('.guesses');
-      let lastResult = document.querySelector('.lastResult');
-      let lowOrHi = document.querySelector('.lowOrHi');
-      
-      let guessSubmit = document.querySelector('.guessSubmit');
-      let guessField = document.querySelector('.guessField');
-      
-      let guessCount = 1;
-      let resetButton;
-      
-        function checkGuess()
-        {
-          let userGuess = Number(guessField.vaue);
-          if(guessCount===1)
-          {
-            guesses.textContent = "Proposition précédent&nbsp;: ";
-          }
-          guesses.textContent += userGuess + ' ';
-
-          if(userGuess===rndNum)
-          {
-            lastResult.textContent = "Bravo vous avez trouvé le nombre !";
-            lastResult.style.backgroundColor = "green";
-            lowOrHi.textContent = '';
-            setGameOver();
-          }
-          else if(guessCount===10)
-          {
-            lastResult.textContent = "!!! Perdu !!!"
-            setGameOver();
-          }
-          else
-          {
-            lastResult.textContent = "Faux !";
-            lastResult.style.backgroundColor = "red";
-            if(userGuess<rndNum)
-            {
-              lowOrHi.textContent = "Le nombre est trop petit !";
-            }
-            else if(rndNum<userGuess)
-            {
-              lowOrHi.textContent = "Le nombre est trop grand !";
-            }
-          }
-
-          guessCount++;
-          guessField.value = '';
-          guessField.focus();
-        }
-    </script>
   </body>
 </html>
